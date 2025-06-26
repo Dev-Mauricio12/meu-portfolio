@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/principalfoto.jpg" alt="Foto de Mauricio Silva" class="foto-perfil">
+        <h1>Mauricio Silva</h1>
+        <p class="subtitulo-cab">
+            < Dev. Júnior Front-End>
+                </Dev.>
+                </Desenvolvedor>
+        </p>
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Sou o Mauricio, desenvolvedor front-end focado em criar interfaces modernas,
+                responsivas e intuitivas. Trabalho com HTML, CSS e JavaScript para oferecer experiências digitais que
+                funcionam bem em todos os dispositivos. Estou sempre evoluindo e buscando novos desafios para aprimorar
+                minhas habilidades.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+            <div class="projetos-card">
+                <img src="./img/calculadora.png" alt="Calculadora Online" class="projetos-imagem">
+                <h3 class="info-projetos">Calculadora Online</h3>
+                <p class="paragrafo-projetos">Projeto de calculadora funcional desenvolvida com HTML, CSS e JavaScript
+                    puro. Realiza operações básicas (soma, subtração, multiplicação e divisão) com interface responsiva
+                    e interativa.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/pag.venda.png" alt="Projeto 1" class="projetos-imagem">
+                <h3 class="info-projetos">Página de Vendas</h3>
+                <p class="paragrafo-projetos">Landing page de produto desenvolvida com
+                    HTML e CSS, simula uma vitrine de e-commerce com chamada para ação e apresentação do produto.</p>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/formulario.png" alt="Projeto 1" class="projetos-imagem">
+                <h3 class="info-projetos">Formulário Dinâmico</h3>
+                <p class="paragrafo-projetos">Landing page de produto com layout moderno e responsivo. Desenvolvida com
+                    HTML e CSS, simula uma vitrine de e-commerce com chamada para ação, apresentação do produto e design
+                    limpo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWpp(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar pelo Whatsapp</button>
+
+        </form>
+
+        <div class="botao-insta">
+            <a href="https://www.instagram.com/cisso_past" target="_blank">
+                <img src="./img/instagram.png" alt="Instagram" class="logo-social">
+            </a>
+            <a href="https://github.com/seu_usuario" target="_blank">
+                <img src="./img/git.png" alt="GitHub" class="logo-social">
+            </a>
+        </div>
+
+
+
+
+    </section>
+
+    <script>
+
+        function enviarWpp(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            const telefone = '5548996584464';
+
+
+
+
+            const texto = "Olá! Me chamo " + nome + " e gostaria de mais informações sobre: " + mensagem;
+            const msgFormatada = encodeURIComponent(texto);
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+
+
+            window.open(url, '_blank');
+        }
+
+
+
+    </script>
+
+</body>
+</body>
+
+</html>
